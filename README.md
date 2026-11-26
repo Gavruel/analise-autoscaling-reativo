@@ -26,11 +26,11 @@ O projeto é um único `index.html`, sem dependências nem etapa de build.
 
 ## Autores
 
-- Leonardo da Silva Vitorio
 - Davi Ferreira Serapião dos Santos
-- Kauê Henrique Figueredo Marques
-- Natan Calasans Rodrigues de Andrade
 - Gabriel Henrique Nascimento Paulino Santos
+- Kauê Henrique Figueredo Marques
+- Leonardo da Silva Vitorio
+- Natan Calasans Rodrigues de Andrade
 
 ## Observação
 

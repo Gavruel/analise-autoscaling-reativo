@@ -1241,11 +1241,11 @@
                 </figure>
 
                 <div class="authors reveal" style="--d:.55s">
-                    <span>Leonardo da Silva Vitorio</span>
                     <span>Davi Ferreira Serapião dos Santos</span>
-                    <span>Kauê Henrique Figueredo Marques</span>
-                    <span>Natan Calasans Rodrigues de Andrade</span>
                     <span>Gabriel Henrique Nascimento Paulino Santos</span>
+                    <span>Kauê Henrique Figueredo Marques</span>
+                    <span>Leonardo da Silva Vitorio</span>
+                    <span>Natan Calasans Rodrigues de Andrade</span>
                     <span>Universidade São Judas Tadeu (USJT)</span>
                 </div>
             </section>
@@ -1259,7 +1259,7 @@
                     <div class="scene calm reveal" style="--d:.25s">
                         <p class="tag">Madrugada comum</p>
                         <h3>Sem fila</h3>
-                        <p>Chega um cliente a cada 12 minutos. Cada atendimento leva 2 minutos.</p>
+                        <p>Chega um cliente a cada 12,5 minutos. Cada atendimento leva 2 minutos.</p>
                         <div class="stat">≈ 16%<small>do tempo o atendente está ocupado</small></div>
                     </div>
                     <div class="scene rush reveal" style="--d:.4s">
@@ -1446,7 +1446,7 @@
 
                 <div class="kpis">
                     <div class="kpi reveal" style="--d:.35s"><div class="v">18.000</div><div class="l">requisições acumuladas quando a capacidade nova fica pronta: Q(T<sub>p</sub>) = (600 − 400) × 90</div></div>
-                    <div class="kpi reveal" style="--d:.45s"><div class="v bad">45 s</div><div class="l">de espera nesse momento, contra uma tolerância de 1 s</div></div>
+                    <div class="kpi reveal" style="--d:.45s"><div class="v bad">30 s</div><div class="l">de espera máxima real, contra uma tolerância de 1 s (seriam 45 s se a capacidade não mudasse)</div></div>
                     <div class="kpi reveal" style="--d:.55s"><div class="v">+90 s</div><div class="l">para drenar a fila: T<sub>d</sub> = Q(T<sub>p</sub>) / (C<sub>1</sub> − λ<sub>1</sub>) = 18.000 / 200</div></div>
                 </div>
                 <p class="src">Cenário ilustrativo (C<sub>1</sub> = 8 instâncias = 800 req/s). Fonte: elaboração própria; Gandhi, Harchol-Balter e Adan (2010).</p>
@@ -1480,7 +1480,7 @@
                     <div class="ro"><div class="v" id="rTstar">2,0 s</div><div class="l">t*: tolerância estoura</div></div>
                     <div class="ro pi" id="rPiBox"><div class="v" id="rPi">45</div><div class="l">Π = T<sub>p</sub> / t*</div></div>
                     <div class="ro"><div class="v" id="rQ">18.000</div><div class="l">fila em T<sub>p</sub></div></div>
-                    <div class="ro"><div class="v" id="rW">45 s</div><div class="l">espera máxima</div></div>
+                    <div class="ro"><div class="v" id="rW">30 s</div><div class="l">espera máxima real</div></div>
                     <div class="ro"><div class="v" id="rTd">90 s</div><div class="l">T<sub>d</sub>: drenar a fila</div></div>
                 </div>
             </section>
@@ -1519,7 +1519,7 @@
                         </ul>
                     </div>
                 </div>
-                <p class="src">Fonte: elaboração própria, com base em Welsh, Culler e Brewer (2001) e Google SRE (2017).</p>
+                <p class="src">Fonte: elaboração própria, com base em Welsh, Culler e Brewer (2001), Forero Cuervo (2017), Zhou et al. (2022) e Park et al. (2024).</p>
             </section>
 
             <!-- === SLIDE 13: CONCLUSÃO === -->
@@ -1552,7 +1552,8 @@
                 <h2 class="reveal" style="--d:.1s">Referências</h2>
                 <ol class="reveal" style="--d:.2s">
                     <li><b>DEAN, J.; BARROSO, L. A.</b> The tail at scale. <i>Communications of the ACM</i>, v. 56, n. 2, p. 74–80, 2013.</li>
-                    <li><b>GANDHI, A.; HARCHOL-BALTER, M.; ADAN, I.</b> Server farms with setup costs. <i>Performance Evaluation</i>, 2010.</li>
+                    <li><b>FORERO CUERVO, A.</b> Handling overload. In: BEYER, B. et al. <i>Site Reliability Engineering</i>. Google, 2017.</li>
+                    <li><b>GANDHI, A.; HARCHOL-BALTER, M.; ADAN, I.</b> Server farms with setup costs. <i>Performance Evaluation</i>, v. 67, n. 11, p. 1123–1138, 2010.</li>
                     <li><b>HARCHOL-BALTER, M.</b> <i>Performance Modeling and Design of Computer Systems</i>. Cambridge University Press, 2013.</li>
                     <li><b>HARCHOL-BALTER, M.</b> Open problems in queueing theory inspired by datacenter computing. <i>Queueing Systems</i>, v. 97, p. 3–37, 2021.</li>
                     <li><b>HERBST, N. R.; KOUNEV, S.; REUSSNER, R.</b> Elasticity in cloud computing: what it is, and what it is not. ICAC, USENIX, 2013.</li>
@@ -1560,8 +1561,9 @@
                     <li><b>KLEINROCK, L.</b> <i>Queueing Systems: Volume I — Theory</i>. Wiley, 1975.</li>
                     <li><b>KUBERNETES.</b> Horizontal Pod Autoscaling. Documentação oficial.</li>
                     <li><b>LITTLE, J. D. C.</b> A proof for the queuing formula: L = λW. <i>Operations Research</i>, v. 9, n. 3, 1961.</li>
+                    <li><b>PARK, J. et al.</b> TopFull: an adaptive top-down overload control for SLO-oriented microservices. ACM SIGCOMM, 2024.</li>
                     <li><b>WELSH, M.; CULLER, D.; BREWER, E.</b> SEDA: an architecture for well-conditioned, scalable internet services. SOSP, ACM, 2001.</li>
-                    <li><b>FORERO CUERVO, A.</b> Handling overload. In: BEYER, B. et al. <i>Site Reliability Engineering</i>. Google, 2017.</li>
+                    <li><b>ZHOU, D. et al.</b> Cushion: a proactive resource provisioning method to mitigate SLO violations for containerized microservices. <i>IET Communications</i>, v. 16, n. 17, 2022.</li>
                 </ol>
             </section>
 
@@ -1675,7 +1677,7 @@
             el('line', { x1: X(0), x2: X(data.length), y1: Y(100), y2: Y(100), stroke: '#2E3A42', 'stroke-width': 2, 'stroke-dasharray': '4 6', opacity: .5 }, svg);
         }
         plotBars('plotUniform', [96, 104, 98, 102, 95, 105, 101, 99, 97, 103, 100, 100, 94, 106, 99, 101, 98, 102, 100, 100, 97, 103, 96, 104], false);
-        plotBars('plotBursty', [55, 50, 60, 450, 45, 55, 50, 60, 55, 50, 45, 55, 450, 60, 50, 55, 45, 50, 60, 55, 50, 45, 300, 55], true);
+        plotBars('plotBursty', [55, 50, 60, 450, 45, 55, 50, 60, 55, 50, 45, 55, 450, 60, 50, 55, 45, 50, 60, 55, 50, 45, 395, 55], true);
 
         /* ===========================================
            FLUID MODEL — shared by slide 10 and the simulator
@@ -1689,13 +1691,23 @@
             const Qtp = over ? (lam - C0) * tp : 0;
             const drains = C1 > lam;
             const td = Qtp > 0 ? (drains ? Qtp / (C1 - lam) : Infinity) : 0;
-            const wMax = over ? Math.max(Qtp / C0, 0) : 0;
             const Q = (t) => {
                 if (t <= tp) return Math.max(0, (lam - C0) * t);
                 const q = Qtp + (lam - C1) * (t - tp);
                 return Math.max(0, q);
             };
             const horizon = !over ? tp * 2 : drains ? Math.max((tp + td) * 1.15, tp * 1.6) : tp * 2;
+            // Real FIFO wait of a request arriving at t: capacity is C0 until Tp and C1 after it.
+            // (Q(t)/C0 is the "virtual" wait, which assumes the capacity never changes.)
+            const wait = (t) => {
+                const q = Q(t);
+                if (t >= tp) return q / C1;
+                if (q <= C0 * (tp - t)) return q / C0;
+                return (tp - t) + (q - C0 * (tp - t)) / C1;
+            };
+            let wMax = 0;
+            if (over && drains) for (let i = 0; i <= 2000; i++) wMax = Math.max(wMax, wait((i / 2000) * (tp + td)));
+            if (over && !drains) wMax = Infinity;
             return { C0, C1, over, tstar, pi, Qtp, drains, td, wMax, Q, horizon };
         }
 
@@ -1810,7 +1822,7 @@
                 $('rPi').textContent = r.pi >= 10 ? fmt(r.pi, 0) : fmt(r.pi, 2);
                 box.classList.add(r.pi > 1 ? 'bad' : 'ok');
                 $('rQ').textContent = fmt(Math.round(r.Qtp));
-                $('rW').textContent = fmtS(r.wMax);
+                $('rW').textContent = isFinite(r.wMax) ? fmtS(r.wMax) : 'sem limite';
                 $('rTd').textContent = r.drains ? fmtS(r.td) : 'não drena';
             }
 
